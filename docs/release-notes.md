@@ -41,18 +41,18 @@ The skill lets the agent:
 
 Open the **Code Trace Tree** view and click **Agent Skill** on the toolbar (cloud download icon):
 
-![Click Agent Skill on the Code Trace Tree toolbar](https://raw.githubusercontent.com/saidake/code-trace-tree-vscode/main/docs/assets/vscode-install-skill-1.png)
+![Click Agent Skill on the Code Trace Tree toolbar](https://raw.githubusercontent.com/pidifa/code-trace-tree-vscode/main/docs/assets/vscode-install-skill-1.png)
 
 * The status page displays the bundled skill version, Python 3 availability, and agent installation statuses:
   * **Choose agents to install** — Select agents that do not have the skill yet.
   * **Install / Update** — Copies the bundled `code-trace-tree` skill into each selected agent's global skills folder (e.g., `~/.cursor/skills/code-trace-tree`).
   * **Remove from installed agents** — Deletes local copies from specified agents.
 
-![Agent Skill status page](https://raw.githubusercontent.com/saidake/code-trace-tree-vscode/main/docs/assets/vscode-install-skill-2.png)
+![Agent Skill status page](https://raw.githubusercontent.com/pidifa/code-trace-tree-vscode/main/docs/assets/vscode-install-skill-2.png)
 
 On first project open, if a detected agent lacks the skill or is outdated, a notification appears once per skill version (dismissing or opening the status page is saved in your global `settings.xml`).
 
-ZIP archives and `npx skills` commands remain available on the [code-trace-tree-skill repository](https://github.com/saidake/code-trace-tree-skill) if needed.
+ZIP archives and `npx skills` commands remain available on the [code-trace-tree-skill repository](https://github.com/pidifa/code-trace-tree-skill) if needed.
 
 ## How to use the skill
 

@@ -6,13 +6,13 @@
   "publisher": "CraigBrown",
   "license": "MIT",
   "author": "Code Trace Tree  Copyright (C) 2025-2026 Craig Brown and Code Trace Tree Contributors",
-  "homepage": "https://github.com/saidake/code-trace-tree-vscode#readme",
+  "homepage": "https://github.com/pidifa/code-trace-tree-vscode#readme",
   "bugs": {
-    "url": "https://github.com/saidake/code-trace-tree-vscode/issues"
+    "url": "https://github.com/pidifa/code-trace-tree-vscode/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saidake/code-trace-tree-vscode.git"
+    "url": "https://github.com/pidifa/code-trace-tree-vscode.git"
   },
   "engines": {
     "vscode": "^1.80.0"

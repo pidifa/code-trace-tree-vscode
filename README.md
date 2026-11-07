@@ -1,11 +1,11 @@
 # Code Trace Tree
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/saidake/code-trace-tree-vscode?sort=semver)](https://github.com/saidake/code-trace-tree-vscode/releases/latest)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/saidake/code-trace-tree-vscode?sort=semver)](https://github.com/pidifa/code-trace-tree-vscode/releases/latest)
 [![Open VSX](https://img.shields.io/open-vsx/v/craigbrown/code-trace-tree?label=Open%20VSX)](https://open-vsx.org/extension/craigbrown/code-trace-tree)
 [![VS Code Marketplace](https://badgen.net/vs-marketplace/v/CraigBrown.code-trace-tree-vscode?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=CraigBrown.code-trace-tree-vscode)
 [![Open VSX Downloads](https://img.shields.io/open-vsx/dt/craigbrown/code-trace-tree?label=Open%20VSX%20Downloads)](https://open-vsx.org/extension/craigbrown/code-trace-tree)
 [![VS Code Marketplace Downloads](https://badgen.net/vs-marketplace/i/CraigBrown.code-trace-tree-vscode?label=VS%20Code%20Marketplace%20Downloads)](https://marketplace.visualstudio.com/items?itemName=CraigBrown.code-trace-tree-vscode)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-![Build](https://github.com/saidake/code-trace-tree-vscode/actions/workflows/release.yml/badge.svg)
+![Build](https://github.com/pidifa/code-trace-tree-vscode/actions/workflows/release.yml/badge.svg)
 
 <img src="main/assets/icons/logo.png" width="100" alt="Code Trace Tree logo">
 
@@ -127,7 +127,7 @@
 </p>
 <p>
   ZIP and <code>npx skills</code> (including a project-local copy) remain on
-  <a href="https://github.com/saidake/code-trace-tree-skill">code-trace-tree-skill</a>
+  <a href="https://github.com/pidifa/code-trace-tree-skill">code-trace-tree-skill</a>
   if you need them.
 </p>
 
@@ -152,7 +152,7 @@
 - Open the project root in VS Code / Cursor
 - Install deps: `cd main && yarn install`
 - Press **F5** to launch an Extension Development Host
-- Shared agent skill: `https://github.com/saidake/code-trace-tree-skill` (copy in `skills/code-trace-tree/` for zip packaging)
+- Shared agent skill: `https://github.com/pidifa/code-trace-tree-skill` (copy in `skills/code-trace-tree/` for zip packaging)
 
 # Contributing
 

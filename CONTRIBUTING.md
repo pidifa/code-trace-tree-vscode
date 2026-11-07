@@ -4,7 +4,7 @@ Welcome! This short guide explains how to contribute effectively to **Code Trace
 
 ## Submitting an issue
 
-- If you find a bug, please submit an issue to our GitHub [repository](https://github.com/saidake/code-trace-tree-vscode/issues).
+- If you find a bug, please submit an issue to our GitHub [repository](https://github.com/pidifa/code-trace-tree-vscode/issues).
 - Before submitting, search the issue tracker to see if your problem already exists.
 - Include the extension version, VS Code / Cursor version, OS, and enough detail to reproduce the problem.
 
