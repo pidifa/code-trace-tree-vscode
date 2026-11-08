@@ -1,3 +1,7 @@
+## v1.3.10
+
+- Fix: "There is no data provider registered that can provide view data." when opening the extension. The empty-state context is now initialized before the tree view is created, so VS Code does not show (and request data from) the tree view while the service is still loading. `loadState()` corrects the context once the profile/tree is loaded.
+
 ## v1.3.9
 
 - Transfer repository to pidifa (github.com/pidifa/code-trace-tree-vscode)
