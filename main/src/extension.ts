@@ -45,6 +45,12 @@ let storageReadyWatcher: StorageReadyWatcher | undefined
 export function activate(context: vscode.ExtensionContext) {
   service = TracePointService.getInstance(context)
   treeDataProvider = new TracePointTreeDataProvider(service)
+
+  // Default the empty-state context before creating the tree view so VS Code does not
+  // show (and request data from) the tree view while the service is still loading.
+  // loadState() corrects this value once the profile/tree has been loaded.
+  void vscode.commands.executeCommand('setContext', 'codeTraceTree.showEmptyState', true)
+
   treeView = vscode.window.createTreeView('codeTraceTree.view', {
     treeDataProvider,
     canSelectMany: true,
