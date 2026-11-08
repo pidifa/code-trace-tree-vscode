@@ -76,8 +76,12 @@ export async function activate(context: vscode.ExtensionContext) {
   )
 
   // Prefer the empty webview until loadState() knows whether the tree has nodes.
+  // showEmptyState defaults to true so the empty webview (not the tree) is shown first.
+  // viewsReady is deliberately NOT set here: it is set only after loadState() has
+  // corrected showEmptyState, so the tree view is never revealed before its data
+  // provider is registered and the empty state is known. This prevents
+  // "no data provider registered" errors when the tree view becomes visible.
   await vscode.commands.executeCommand('setContext', 'codeTraceTree.showEmptyState', true)
-  await vscode.commands.executeCommand('setContext', 'codeTraceTree.viewsReady', true)
 
   context.subscriptions.push(
     treeView.onDidChangeSelection((e) => {
@@ -163,7 +167,13 @@ export async function activate(context: vscode.ExtensionContext) {
     })
   )
 
-  service.loadState().then(afterLoadState)
+  // Wait for loadState() so showEmptyState reflects the real tree state before
+  // views become visible. This prevents the tree from being revealed without a
+  // data provider and avoids "no data provider registered" errors.
+  await service.loadState()
+  afterLoadState()
+  await vscode.commands.executeCommand('setContext', 'codeTraceTree.viewsReady', true)
+
   service.setOnStorageBound(() => {
     startExternalWatcher(context)
     refreshEditorEligibleContext()
