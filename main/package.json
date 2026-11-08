@@ -2,7 +2,7 @@
   "name": "code-trace-tree-vscode",
   "displayName": "Code Trace Tree for VS Code",
   "description": "Trace code in a tree structure with AI agent support. Build and visualize code workflows as nested, navigable trace points",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "publisher": "CraigBrown",
   "license": "MIT",
   "author": "Code Trace Tree  Copyright (C) 2025-2026 Craig Brown and Code Trace Tree Contributors",
@@ -63,24 +63,24 @@
           "id": "codeTraceTree.profile",
           "name": "Profile",
           "type": "webview",
-          "when": "codeTraceTree.hasWorkspaceFolder"
+          "when": "codeTraceTree.viewsReady && codeTraceTree.hasWorkspaceFolder"
         },
         {
           "id": "codeTraceTree.view",
           "name": "Trace Points",
-          "when": "!codeTraceTree.showEmptyState"
+          "when": "codeTraceTree.viewsReady && !codeTraceTree.showEmptyState"
         },
         {
           "id": "codeTraceTree.empty",
           "name": "Trace Points",
           "type": "webview",
-          "when": "codeTraceTree.showEmptyState"
+          "when": "codeTraceTree.viewsReady && codeTraceTree.showEmptyState"
         },
         {
           "id": "codeTraceTree.description",
           "name": "Description",
           "type": "webview",
-          "when": "codeTraceTree.hasWorkspaceFolder"
+          "when": "codeTraceTree.viewsReady && codeTraceTree.hasWorkspaceFolder"
         }
       ]
     },

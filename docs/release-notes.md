@@ -9,6 +9,8 @@
 
 # What's New
 
+* **v1.3.11**: Fixed "There is no data provider registered that can provide view data." when opening the extension. Sidebar views stay hidden until their providers are registered.
+
 * **v1.3.10**: Fixed "There is no data provider registered that can provide view data." when opening the extension. The empty-state context is now initialized before the tree view is created, so VS Code does not show (and request data from) the tree view while the service is still loading. `loadState()` corrects the context once the profile/tree is loaded.
 
 * **v1.3.9**: Repository transferred to pidifa (github.com/pidifa/code-trace-tree-vscode). 

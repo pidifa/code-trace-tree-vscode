@@ -42,15 +42,13 @@ let treeView: vscode.TreeView<vscode.TreeItem>
 let externalWatcher: ExternalStorageWatcher | undefined
 let storageReadyWatcher: StorageReadyWatcher | undefined
 
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
   service = TracePointService.getInstance(context)
   treeDataProvider = new TracePointTreeDataProvider(service)
 
-  // Default the empty-state context before creating the tree view so VS Code does not
-  // show (and request data from) the tree view while the service is still loading.
-  // loadState() corrects this value once the profile/tree has been loaded.
-  void vscode.commands.executeCommand('setContext', 'codeTraceTree.showEmptyState', true)
-
+  // Views stay hidden until codeTraceTree.viewsReady (all when-clauses require it).
+  // Unset keys are falsy, so "!showEmptyState" would otherwise show the tree before
+  // createTreeView runs and VS Code reports "no data provider registered".
   treeView = vscode.window.createTreeView('codeTraceTree.view', {
     treeDataProvider,
     canSelectMany: true,
@@ -76,6 +74,10 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.window.registerWebviewViewProvider('codeTraceTree.empty', emptyProvider)
   )
+
+  // Prefer the empty webview until loadState() knows whether the tree has nodes.
+  await vscode.commands.executeCommand('setContext', 'codeTraceTree.showEmptyState', true)
+  await vscode.commands.executeCommand('setContext', 'codeTraceTree.viewsReady', true)
 
   context.subscriptions.push(
     treeView.onDidChangeSelection((e) => {
