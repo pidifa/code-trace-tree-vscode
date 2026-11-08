@@ -1,3 +1,7 @@
+## v1.3.12
+
+- Fix: "There is no data provider registered can provide view data." when opening the extension. `viewsReady` is now set only after `loadState()` completes and corrects `showEmptyState`, so the tree view is never revealed before its data provider is registered and the empty state is known.
+
 ## v1.3.11
 
 - Fix: "There is no data provider registered that can provide view data." when opening the extension. Views stay hidden until tree and webview providers are registered (`codeTraceTree.viewsReady`). The previous empty-state default still left the tree visible before activation because `!showEmptyState` is true when the key is unset.
